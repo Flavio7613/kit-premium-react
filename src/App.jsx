@@ -57,7 +57,7 @@ const App = () => {
   };
 
   const handleCTA = () => {
-    window.location.href = '#checkout';
+    window.location.href = 'https://pay.kirvano.com/ff69ac18-548d-48f5-8269-b92893cbb4aa';
   };
 
   const isUrgent = timeLeft < 3 * 60;
