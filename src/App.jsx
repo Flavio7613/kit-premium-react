@@ -80,12 +80,14 @@ const App = () => {
 
       {/* Hero Section */}
       <header className="hero">
-        <div className={`hero-timer ${isUrgent ? 'urgent' : ''}`}>
-          <span className="timer-text">⚠️ Oferta expira em:</span>
-          <span className="timer-numbers">{formatTime(timeLeft)}</span>
-        </div>
         <div className="container">
-          <div className="badge-offer">✔ Oferta Única</div>
+          <div className="hero-top-mobile">
+            <div className={`hero-timer ${isUrgent ? 'urgent' : ''}`}>
+              <span className="timer-text">⚠️ Oferta expira em:</span>
+              <span className="timer-numbers">{formatTime(timeLeft)}</span>
+            </div>
+            <div className="badge-offer">✔ Oferta Única</div>
+          </div>
           <div className="grid-hero">
             <div className="hero-content">
               <h1>Leve hoje o acesso completo e tenha muito mais variedade para cuidar da sua alimentação.</h1>
@@ -178,16 +180,18 @@ const App = () => {
       {/* Final CTA */}
       <Section id="checkout" className="final-cta section-padding">
         <div className="container">
-          <div className="pricing-box" style={{textAlign: 'center', maxWidth: '800px', margin: '0 auto', padding: '60px', borderRadius: '40px', background: 'white', boxShadow: '0 20px 50px rgba(255, 95, 162, 0.15)', border: '2px solid #ffd6e7'}}>
-            <h2 style={{marginBottom: '30px'}}>Comece hoje a tornar sua alimentação mais prática, saborosa e organizada.</h2>
-            <div className="price" style={{margin: '40px 0', display: 'flex', flexDirection: 'column'}}>
-              <span style={{textDecoration: 'line-through', color: '#998888', fontSize: '1.5rem'}}>De R$97</span>
-              <span style={{color: '#ff5fa2', fontSize: '3.5rem', fontWeight: '800'}}>Por apenas R$24,90</span>
+          <div className="pricing-box">
+            <h2>Comece hoje a tornar sua alimentação mais prática, saborosa e organizada.</h2>
+            <div className="price">
+              <span className="old-price">De R$97</span>
+              <span className="new-price">Por apenas R$24,90</span>
             </div>
-            <button onClick={handleCTA} className="btn btn-large btn-giant">SIM! QUERO O KIT PREMIUM</button>
-            <a href="#" className="btn-refusal">Quero Perder esta Oportunidade</a>
+            <div className="cta-group">
+              <button onClick={handleCTA} className="btn btn-large btn-giant">SIM! QUERO O KIT PREMIUM</button>
+              <a href="#" className="btn-refusal">Quero Perder esta Oportunidade</a>
+            </div>
             
-            <div className="guarantees" style={{marginTop: '30px', display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap', fontSize: '0.9rem', fontWeight: 600}}>
+            <div className="guarantees">
               <span>✔ Acesso imediato</span>
               <span>✔ Pagamento seguro</span>
               <span>✔ Oferta única</span>
