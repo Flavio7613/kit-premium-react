@@ -67,7 +67,7 @@ const App = () => {
       {/* Sticky Footer (Timer + CTA) */}
       <div className={`sticky-footer ${showSticky ? 'show' : ''}`}>
         <div className={`floating-timer ${isUrgent ? 'urgent' : ''}`}>
-          <span className="timer-text">⚠️ Oferta especial expira em:</span>
+          <span className="timer-text">⚠️ Oferta exclusiva liberada por tempo limitado</span>
           <span className="timer-numbers">{formatTime(timeLeft)}</span>
         </div>
         <div className="sticky-cta">
@@ -83,7 +83,7 @@ const App = () => {
         <div className="container">
           <div className="hero-top-mobile">
             <div className={`hero-timer ${isUrgent ? 'urgent' : ''}`}>
-              <span className="timer-text">⚠️ Oferta expira em:</span>
+              <span className="timer-text">⚠️ Oferta exclusiva liberada</span>
               <span className="timer-numbers">{formatTime(timeLeft)}</span>
             </div>
             <div className="badge-offer">✔ Oferta Única</div>
@@ -91,13 +91,13 @@ const App = () => {
           <div className="grid-hero">
             <div className="hero-content">
               <h1>Leve hoje o acesso completo e tenha muito mais variedade para cuidar da sua alimentação.</h1>
-              <p className="subheadline">Pare de sofrer sem saber o que comer no dia a dia. Descubra receitas, cardápios e materiais práticos criados para ajudar diabéticos a terem uma alimentação mais equilibrada sem abrir mão do sabor.</p>
+              <p className="subheadline">Pare de sofrer sem saber o que comer no dia a dia. Descubra receitas práticas e cardápios criados para diabéticos terem uma rotina simples, com doces sem culpa e muito sabor.</p>
               
-              <div className="cta-group">
-                <button onClick={handleCTA} className="btn btn-large">QUERO ACESSO IMEDIATO</button>
+              <div className="cta-group hero-cta">
+                <button onClick={handleCTA} className="btn btn-large btn-pulse">SIM! QUERO ADICIONAR AO MEU PEDIDO</button>
                 <a href="#" className="btn-refusal">Quero Perder esta Oportunidade</a>
               </div>
-              <p className="micro-text" style={{fontSize: '0.85rem', color: '#887777', marginTop: '15px', fontStyle: 'italic'}}>Oferta liberada apenas nesta página.</p>
+              <p className="micro-text" style={{fontSize: '0.85rem', color: '#887777', marginTop: '15px', fontStyle: 'italic'}}>Oferta exclusiva liberada apenas nesta página.</p>
             </div>
 
             <div className="hero-mockup">
@@ -116,10 +116,10 @@ const App = () => {
           <div className="grid-pains">
             {[
               {icon: '🤔', text: 'Não saber o que comer'},
-              {icon: '🍰', text: 'Sentir falta de doces'},
-              {icon: '🏃‍♀️', text: 'Rotina corrida'},
+              {icon: '🍰', text: 'Doces sem culpa'},
+              {icon: '🏃‍♀️', text: 'Alimentação simples'},
               {icon: '📈', text: 'Medo de piorar a glicose'},
-              {icon: '🤮', text: 'Dietas difíceis e sem sabor'}
+              {icon: '🤮', text: 'Rotina corrida facilitada'}
             ].map((item, i) => (
               <div key={i} className="pain-card">
                 <div style={{fontSize: '2.5rem', marginBottom: '15px'}}>{item.icon}</div>
@@ -184,10 +184,10 @@ const App = () => {
             <h2>Comece hoje a tornar sua alimentação mais prática, saborosa e organizada.</h2>
             <div className="price">
               <span className="old-price">De R$97</span>
-              <span className="new-price">Por apenas R$24,90</span>
+              <span className="new-price">Por apenas R$19,90</span>
             </div>
             <div className="cta-group">
-              <button onClick={handleCTA} className="btn btn-large btn-giant">SIM! QUERO O KIT PREMIUM</button>
+              <button onClick={handleCTA} className="btn btn-large btn-giant btn-pulse">SIM! QUERO ADICIONAR AO MEU PEDIDO</button>
               <a href="#" className="btn-refusal">Quero Perder esta Oportunidade</a>
             </div>
             
