@@ -386,7 +386,7 @@ body {
 
   /* Hero Section Mobile Fixes */
   .hero {
-    padding: 40px 0;
+    padding: 15px 0 40px !important;
   }
 
   .hero .container {
@@ -402,9 +402,9 @@ body {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 16px !important;
-    margin: 0 auto 32px auto !important;
-    padding-top: 24px !important;
+    gap: 12px !important;
+    margin: 0 auto 20px auto !important;
+    padding-top: 10px !important;
   }
 
   .hero-timer,
