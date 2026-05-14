@@ -73,7 +73,7 @@ const App = () => {
         <div className="sticky-cta">
           <div className="sticky-cta-content">
             <button onClick={handleCTA} className="btn btn-pulse">QUERO ACESSO AGORA</button>
-            <a href="#" className="btn-refusal">Quero Perder esta Oportunidade</a>
+            <a href="https://downsell-kit-essencial-ix4p.vercel.app/" target="_self" className="btn-refusal">Não, quero perder esta oportunidade</a>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@ const App = () => {
               
               <div className="cta-group hero-cta">
                 <button onClick={handleCTA} className="btn btn-large btn-pulse">SIM! QUERO ADICIONAR AO MEU PEDIDO</button>
-                <a href="#" className="btn-refusal">Quero Perder esta Oportunidade</a>
+                <a href="https://downsell-kit-essencial-ix4p.vercel.app/" target="_self" className="btn-refusal">Não, quero perder esta oportunidade</a>
               </div>
               <p className="micro-text" style={{fontSize: '0.85rem', color: '#887777', marginTop: '15px', fontStyle: 'italic'}}>Oferta exclusiva liberada apenas nesta página.</p>
             </div>
@@ -188,7 +188,7 @@ const App = () => {
             </div>
             <div className="cta-group">
               <button onClick={handleCTA} className="btn btn-large btn-giant btn-pulse">SIM! QUERO ADICIONAR AO MEU PEDIDO</button>
-              <a href="#" className="btn-refusal">Quero Perder esta Oportunidade</a>
+              <a href="https://downsell-kit-essencial-ix4p.vercel.app/" target="_self" className="btn-refusal">Não, quero perder esta oportunidade</a>
             </div>
             
             <div className="guarantees">
