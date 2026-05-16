@@ -94,7 +94,15 @@ const App = () => {
               <p className="subheadline">Pare de sofrer sem saber o que comer no dia a dia. Descubra receitas práticas e cardápios criados para diabéticos terem uma rotina simples, com doces sem culpa e muito sabor.</p>
               
               <div className="cta-group hero-cta">
-                <button onClick={() => fbq('track', 'InitiateCheckout')} className="btn btn-large btn-pulse">SIM! QUERO ADICIONAR AO MEU PEDIDO</button>
+                <button
+  onClick={() => {
+    fbq('track', 'InitiateCheckout');
+    window.location.href = 'https://pay.kirvano.com/ff69ac18-548d-48f5-8269-b92893cbb4aa';
+  }}
+  className="btn btn-large btn-giant btn-pulse"
+>
+  SIM! QUERO ADICIONAR AO MEU PEDIDO
+</button>
                 <a href="https://downsell-kit-essencial-ix4p.vercel.app/" target="_self" className="btn-refusal">Não, quero perder esta oportunidade</a>
               </div>
               <p className="micro-text" style={{fontSize: '0.85rem', color: '#887777', marginTop: '15px', fontStyle: 'italic'}}>Oferta exclusiva liberada apenas nesta página.</p>
@@ -187,7 +195,13 @@ const App = () => {
               <span className="new-price">Por apenas R$19,90</span>
             </div>
             <div className="cta-group">
-              <button onClick={() => fbq('track', 'InitiateCheckout')} className="btn btn-large btn-giant btn-pulse">SIM! QUERO ADICIONAR AO MEU PEDIDO</button>
+              <button 
+  onClick={() => {
+    fbq('track', 'InitiateCheckout');
+    window.location.href = 'https://pay.kirvano.com/ff69ac18-548d-48f5-8269-b92893cbb4aa';
+  }}
+  className="btn btn-large btn-giant btn-pulse"
+>SIM! QUERO ADICIONAR AO MEU PEDIDO</button>
               <a href="https://downsell-kit-essencial-ix4p.vercel.app/" target="_self" className="btn-refusal">Não, quero perder esta oportunidade</a>
             </div>
             
