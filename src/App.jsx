@@ -33,7 +33,13 @@ const Section = ({ children, className = "" }) => {
 
 const App = () => {
   useEffect(() => {
-  fbq('track', 'PageView');
+  const timer = setTimeout(() => {
+    if (window.fbq) {
+      window.fbq('track', 'PageView');
+    }
+  }, 800);
+
+  return () => clearTimeout(timer);
 }, []);
   const [timeLeft, setTimeLeft] = useState(8 * 60); // 8 minutes
   const [showSticky, setShowSticky] = useState(false);
