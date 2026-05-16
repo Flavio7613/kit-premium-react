@@ -33,13 +33,25 @@ const Section = ({ children, className = "" }) => {
 
 const App = () => {
   useEffect(() => {
-  const timer = setTimeout(() => {
-    if (window.fbq) {
-      window.fbq('track', 'PageView');
-    }
-  }, 800);
+  if (!window.fbq) {
+    window.fbq = function () {
+      window.fbq.callMethod
+        ? window.fbq.callMethod.apply(window.fbq, arguments)
+        : window.fbq.queue.push(arguments);
+    };
 
-  return () => clearTimeout(timer);
+    window.fbq.queue = [];
+    window.fbq.loaded = true;
+    window.fbq.version = '2.0';
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    document.head.appendChild(script);
+  }
+
+  window.fbq('init', '1509435144016544');
+  window.fbq('track', 'PageView');
 }, []);
   const [timeLeft, setTimeLeft] = useState(8 * 60); // 8 minutes
   const [showSticky, setShowSticky] = useState(false);
