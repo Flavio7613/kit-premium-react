@@ -33,26 +33,30 @@ const Section = ({ children, className = "" }) => {
 
 const App = () => {
   useEffect(() => {
-  if (!window.fbq) {
-    window.fbq = function () {
-      window.fbq.callMethod
-        ? window.fbq.callMethod.apply(window.fbq, arguments)
-        : window.fbq.queue.push(arguments);
-    };
+    let attempts = 0;
+    const maxAttempts = 10;
 
-    window.fbq.queue = [];
-    window.fbq.loaded = true;
-    window.fbq.version = '2.0';
+    const trySendPageView = setInterval(() => {
+      attempts++;
+      
+      if (typeof window.fbq === 'function') {
+        console.log("Meta Pixel carregado");
+        if (!window.__metaPageViewSent) {
+          window.fbq('track', 'PageView');
+          window.__metaPageViewSent = true;
+          console.log("PageView enviado");
+        }
+        clearInterval(trySendPageView);
+      } else {
+        console.log("fbq ainda não disponível");
+        if (attempts >= maxAttempts) {
+          clearInterval(trySendPageView);
+        }
+      }
+    }, 500);
 
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://connect.facebook.net/en_US/fbevents.js';
-    document.head.appendChild(script);
-  }
-
-  window.fbq('init', '1509435144016544');
-  window.fbq('track', 'PageView');
-}, []);
+    return () => clearInterval(trySendPageView);
+  }, []);
   const [timeLeft, setTimeLeft] = useState(8 * 60); // 8 minutes
   const [showSticky, setShowSticky] = useState(false);
 
