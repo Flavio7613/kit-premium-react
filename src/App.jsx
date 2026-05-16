@@ -72,7 +72,10 @@ const App = () => {
         </div>
         <div className="sticky-cta">
           <div className="sticky-cta-content">
-            <button onClick={() => fbq('track', 'InitiateCheckout')} className="btn btn-pulse">QUERO ACESSO AGORA</button>
+            <button onClick={() => {
+  fbq('track', 'InitiateCheckout');
+  window.location.href = 'https://pay.kirvano.com/ff69ac18-548d-48f5-8269-b92893cbb4aa';
+}} className="btn btn-pulse">QUERO ACESSO AGORA</button>
             <a href="https://downsell-kit-essencial-ix4p.vercel.app/" target="_self" className="btn-refusal">Não, quero perder esta oportunidade</a>
           </div>
         </div>
