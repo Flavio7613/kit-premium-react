@@ -32,31 +32,7 @@ const Section = ({ children, className = "" }) => {
 };
 
 const App = () => {
-  useEffect(() => {
-    let attempts = 0;
-    const maxAttempts = 10;
 
-    const trySendPageView = setInterval(() => {
-      attempts++;
-      
-      if (typeof window.fbq === 'function') {
-        console.log("Meta Pixel carregado");
-        if (!window.__metaPageViewSent) {
-          window.fbq('track', 'PageView');
-          window.__metaPageViewSent = true;
-          console.log("PageView enviado");
-        }
-        clearInterval(trySendPageView);
-      } else {
-        console.log("fbq ainda não disponível");
-        if (attempts >= maxAttempts) {
-          clearInterval(trySendPageView);
-        }
-      }
-    }, 500);
-
-    return () => clearInterval(trySendPageView);
-  }, []);
   const [timeLeft, setTimeLeft] = useState(8 * 60); // 8 minutes
   const [showSticky, setShowSticky] = useState(false);
 
